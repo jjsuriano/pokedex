@@ -1,9 +1,10 @@
 # PokéDex
 
-Description:
+## Description
+
 A PokéDex for the first 151 Pokémons.
 
-Tools Used:
+## Tools Used
 
 - HTML
 - CSS
