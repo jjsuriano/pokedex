@@ -318,10 +318,7 @@ main {
     font-size: 18px;
   }
   #logo {
-    height: 80px;
-  }
-  main {
-    padding-top: 145px;
+    height: 100px;
   }
 }
 
@@ -338,10 +335,7 @@ main {
     gap: 0;
   }
   #logo {
-    height: 75px;
-  }
-  main {
-    padding-top: 140px;
+    height: 100px;
   }
   .type {
     font-size: 20px;
