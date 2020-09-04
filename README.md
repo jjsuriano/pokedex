@@ -1,6 +1,6 @@
 # PokéDex
 
-[Live] (https://jjsuriano.github.io/pokedex/)
+[Live](https://jjsuriano.github.io/pokedex/)
 
 ## Description
 
