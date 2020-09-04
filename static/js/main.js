@@ -23,10 +23,20 @@ let types = {
 
 // Get Pokemon Object from PokeDex JSON
 
-function getPokemon(id) {
+function getPokemonByPkdxID(id) {
   for (let i = 0; i < pokedex.length; i++) {
     let pokemon = pokedex[i];
     if (pokemon.pkdx_id === id) {
+      return pokemon;
+    }
+  }
+  return null;
+}
+
+function getPokemonByName(name) {
+  for (let i = 0; i < pokedex.length; i++) {
+    let pokemon = pokedex[i];
+    if (pokemon.name === name) {
       return pokemon;
     }
   }
@@ -161,7 +171,7 @@ function cardEventListeners() {
     });
 
     element.addEventListener("click", () => {
-      createAndDisplayModal(getPokemon(Number(element.id)));
+      createAndDisplayModal(getPokemonByPkdxID(Number(element.id)));
     });
   });
 }
@@ -214,20 +224,41 @@ function createAndDisplayModal(pokemon, type) {
 
   document.getElementById("pokemon-detail-text").innerHTML =
     pokemon.description;
+
+  document.getElementById("pokemon-detail-evolutions").innerHTML = "";
+
   if (pokemon.evolutions.length > 0) {
-    let evolutions = "";
     for (let j = 0; j < pokemon.evolutions.length; j++) {
-      evolutions += pokemon.evolutions[j]["to"];
-      if (j === pokemon.evolutions.length - 1) {
-        evolutions += ".";
-      } else {
-        evolutions += ", ";
+      const evolution = getPokemonByName(pokemon.evolutions[j]["to"]);
+
+      const wrapper = document.createElement("div");
+      const container = document.createElement("div");
+
+      wrapper.className = "col mb-4";
+
+      container.className = "card text-center justify-content-center";
+      container.style.height = "150px";
+
+      const image = document.createElement("img");
+      const name = document.createElement("p");
+
+      name.innerHTML = pokemon.evolutions[j]["to"];
+
+      if (evolution !== null) {
+        image.src = evolution.art_url;
+        image.style.width = "50%";
+        image.style.margin = "0 auto";
+        container.appendChild(image);
       }
-      document.getElementById(
-        "pokemon-detail-evolutions"
-      ).innerHTML = evolutions;
+
+      container.appendChild(name);
+      wrapper.appendChild(container);
+      document.getElementById("pokemon-detail-evolutions").className =
+        "row row-cols-2 row-cols-sm-3";
+      document.getElementById("pokemon-detail-evolutions").appendChild(wrapper);
     }
   } else {
+    document.getElementById("pokemon-detail-evolutions").className = "";
     document.getElementById("pokemon-detail-evolutions").innerHTML =
       "Does not evolve.";
   }
