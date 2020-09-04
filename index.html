@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéDex</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="./static/img/pokeball.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./static/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        <img
+          src="https://cdn.bulbagarden.net/upload/4/4b/Pok%C3%A9dex_logo.png"
+          alt="PokéDex"
+          id="logo"
+          height="100px"
+        />
+      </h1>
+    </header>
+    <main class="container-fluid pl-4 pr-4">
+      <div class="mb-3 noselect" id="type-filters"></div>
+      <div
+        class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4"
+        id="pokedex-grid"
+      ></div>
+
+      <div
+        class="modal fade"
+        id="pokemon-detail"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="pokemonDetailModal"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-scrollable my-modal"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="pokemon-detail-title">Modal title</h5>
+            </div>
+            <div class="modal-body my-modal-body">
+              <div id="pokemon-background" class="bg bg-sky">
+                <img src="" alt="" id="pokemon-detail-image" />
+              </div>
+              <div class="my-2" id="pokemon-detail-types"></div>
+              <h6 class="mt-3 text-left">Description</h6>
+              <p id="pokemon-detail-text"></p>
+              <h6 class="mt-3 text-left">Evolution</h6>
+              <p id="pokemon-detail-evolutions"></p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="scroll-top" class="hide">
+      <div id="scroll-top-container">
+        <i class="fa fa-arrow-up" id="scroll-top-icon"></i>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./static/js/pokedex.js"></script>
+    <script src="./static/js/main.js"></script>
+  </body>
+</html>
