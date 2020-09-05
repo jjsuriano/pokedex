@@ -234,7 +234,7 @@ function createAndDisplayModal(pokemon, type) {
       const wrapper = document.createElement("div");
       const container = document.createElement("div");
 
-      wrapper.className = "col mb-4";
+      wrapper.className = "col mt-3 mb-1";
 
       container.className = "card text-center justify-content-center";
       container.style.height = "150px";
