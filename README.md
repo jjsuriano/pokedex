@@ -12,3 +12,4 @@ A PokéDex for the first 151 Pokémons.
 - CSS
 - Bootstrap
 - JavaScript
+- Webpack
