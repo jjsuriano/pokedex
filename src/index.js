@@ -1,4 +1,5 @@
 import "./styles/style.scss";
+import pokedex from "./pokedex";
 
 const types = {
   all: "black",
@@ -12,7 +13,7 @@ const types = {
   ghost: "#6f5898",
   grass: "#78c84f",
   ground: "#e1c068",
-  ice: "#99d8dxw8",
+  ice: "#99d8d8",
   normal: "#a7a877",
   poison: "#9f419f",
   psychic: "#f95887",
@@ -54,7 +55,7 @@ function setPokemonBackground(bgType) {
 
 function showTypes() {
   let filtersContainer = document.getElementById("type-filters");
-  for (t in types) {
+  for (let t in types) {
     let type = document.createElement("span");
     type.className = "badge ml-2 mr-2 py-2 px-3 text-uppercase type-filter";
     type.id = t;

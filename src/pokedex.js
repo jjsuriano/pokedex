@@ -2627,3 +2627,5 @@ let pokedex = [
     evolutions: [],
   },
 ];
+
+module.exports = pokedex;
