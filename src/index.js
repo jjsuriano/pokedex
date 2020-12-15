@@ -51,6 +51,14 @@ function setPokemonBackground(bgType) {
   container.className = "bg bg-" + bgType;
 }
 
+function getImgURL(id) {
+  return (
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" +
+    String(id) +
+    ".png"
+  );
+}
+
 /* CREATION OF TYPE FILTERS */
 
 function showTypes() {
@@ -114,7 +122,7 @@ function createAndDisplayCard(pokemon) {
 
   let image = document.createElement("img");
   image.className = "card-img-top my-card-img";
-  image.src = pokemon.art_url;
+  image.src = getImgURL(pokemon.pkdx_id);
   image.alt = pokemon.name;
 
   let cardBody = document.createElement("div");
@@ -220,7 +228,7 @@ function createAndDisplayModal(pokemon, type) {
   }
 
   let pokemonImage = document.getElementById("pokemon-detail-image");
-  pokemonImage.src = pokemon.art_url;
+  pokemonImage.src = getImgURL(pokemon.pkdx_id);
   pokemonImage.alt = pokemon.name;
   pokemonImage.style.maxWidth = "100%";
   // pokemonImage.classList.add("float");
@@ -248,7 +256,7 @@ function createAndDisplayModal(pokemon, type) {
       name.innerHTML = pokemon.evolutions[j]["to"];
 
       if (evolution !== null) {
-        image.src = evolution.art_url;
+        image.src = getImgURL(evolution.pkdx_id);
         image.style.width = "50%";
         image.style.margin = "0 auto";
         container.appendChild(image);
