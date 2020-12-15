@@ -115,7 +115,6 @@ function createAndDisplayCard(pokemon) {
   let image = document.createElement("img");
   image.className = "card-img-top my-card-img";
   image.src = pokemon.art_url;
-  console.log(pokemon.art_url);
   image.alt = pokemon.name;
 
   let cardBody = document.createElement("div");
